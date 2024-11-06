@@ -50,6 +50,10 @@ function SetAlarm() {
 
   const handleClose = () => {
     setOpen(false);
+    setTitle('');
+    setDescription('');
+    setDate(dayjs());
+    setTime(dayjs());
   };
 
   const handleSave = () => {
@@ -61,7 +65,7 @@ function SetAlarm() {
     setAlarms(updatedAlarms);
     localStorage.setItem('alarms', JSON.stringify(updatedAlarms));
 
-    setOpen(false);
+    handleClose();
   };
 
   useEffect(() => {
